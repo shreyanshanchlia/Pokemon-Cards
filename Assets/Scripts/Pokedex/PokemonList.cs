@@ -1,28 +1,37 @@
-using System;
 using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
-using UnityEngine.UI; // For handling text display
+using UnityEngine.UI; 
 
 public class PokemonList : MonoBehaviour
 {
-    public GameObject pokemonPrefab; // Prefab for displaying Pokémon in the list
-    public Transform content; // ScrollView content holder
+    [SerializeField] PokemonListing pokemonPrefab;
+    [SerializeField] ScrollRect scrollRect;
+    [SerializeField] Transform content; 
 
+    private bool isLoading = false;
     private string nextUrl = "https://pokeapi.co/api/v2/pokemon?limit=10&offset=0";
 
     private void Start()
     {
-        FetchPokemonList();
+        LoadNextPage();
+        scrollRect.onValueChanged.AddListener(OnScroll);
+    }
+    
+    private void OnScroll(Vector2 position)
+    {
+        if (scrollRect.content.anchoredPosition.y >= scrollRect.content.sizeDelta.y - scrollRect.viewport.rect.height - Screen.height * 0.8f && !isLoading)
+        {
+            LoadNextPage();
+        }
     }
 
-    // Method to fetch the list of Pokémon
-    public void FetchPokemonList()
+    private void LoadNextPage()
     {
         if (!string.IsNullOrEmpty(nextUrl))
         {
+            isLoading = true;
             StartCoroutine(GetPokemonList(nextUrl));
         }
     }
@@ -34,63 +43,26 @@ public class PokemonList : MonoBehaviour
 
         if (request.result == UnityWebRequest.Result.Success)
         {
-            PokemonResponse response = JsonUtility.FromJson<PokemonResponse>(request.downloadHandler.text);
+            PokemonListResponse response = JsonUtility.FromJson<PokemonListResponse>(request.downloadHandler.text);
 
             nextUrl = response.next;
 
             foreach (var pokemon in response.results)
             {
-                GameObject pokemonItem = Instantiate(pokemonPrefab, content);
-                pokemonItem.GetComponentInChildren<TMP_Text>().text = pokemon.name;
-
-                StartCoroutine(FetchPokemonDetails(pokemon.url, pokemonItem));
+                PokemonListing pokemonItem = Instantiate(pokemonPrefab, content);
+                pokemonItem.SetPokemon(pokemon);
             }
         }
         else
         {
             Debug.LogError(request.error);
         }
-    }
-
-    // Fetch detailed info about a Pokémon, including its image
-    IEnumerator FetchPokemonDetails(string pokemonUrl, GameObject pokemonItem)
-    {
-        UnityWebRequest request = UnityWebRequest.Get(pokemonUrl);
-        yield return request.SendWebRequest();
-
-        if (request.result == UnityWebRequest.Result.Success)
-        {
-            PokemonDetails details = JsonUtility.FromJson<PokemonDetails>(request.downloadHandler.text);
-            StartCoroutine(GetSpriteFromUrl(details.sprites.front_default, sprite => pokemonItem.GetComponentInChildren<Image>().sprite = sprite));
-
-        }
-        else
-        {
-            Debug.LogError(request.error);
-        }
-    }
-    
-    IEnumerator GetSpriteFromUrl(string url, System.Action<Sprite> callback)
-    {
-        UnityWebRequest request = UnityWebRequestTexture.GetTexture(url);
-        yield return request.SendWebRequest();
-
-        if (request.result == UnityWebRequest.Result.Success)
-        {
-            Texture2D texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
-            Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-            callback(sprite);
-        }
-        else
-        {
-            Debug.LogError(request.error);
-            callback(null);
-        }
+        isLoading = false;
     }
 }
 
 [System.Serializable]
-public class PokemonResponse
+public class PokemonListResponse
 {
     public int count;
     public string next;
@@ -106,7 +78,7 @@ public class Pokemon
 }
 
 [System.Serializable]
-public class PokemonDetails
+public class PokemonSpritesResponse
 {
     public PokemonSprites sprites;
 }

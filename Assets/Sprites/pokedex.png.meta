@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fe6a9fd500bf74042a0c8764350c4567
+guid: bcf787ace3a9cd64c8b5bbdb29b3e813
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2979399389382209127
-    second: pokemon_home_0
+      213: 3912286763770511152
+    second: pokedex_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pokemon_home_0
+      name: pokedex_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1000
-        height: 1500
+        width: 501
+        height: 189
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 76e642885f3f85920800000000000000
-      internalID: 2979399389382209127
+      spriteID: 03ff00e551c3b4630800000000000000
+      internalID: 3912286763770511152
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      pokemon_home_0: 2979399389382209127
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
