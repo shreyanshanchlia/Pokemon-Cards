@@ -1,0 +1,23 @@
+# ninja log v5
+1	1147	7515721209323430	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	28a76d19dd7e0c54
+31	224	7515721200181751	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	ab37dbb8dbab8642
+11	926	7515721207166859	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	ce500f11ea0d04ba
+24	823	7515721206137773	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	fe5ef0161cc53b07
+225	353	7515721201363700	C:/Unity/Projects/Pokemon Cards/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3c4q1o3d/obj/arm64-v8a/libswappywrapper.so	1d0b9991eff2873a
+14	788	7515721205783785	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	3808af72bd3cd62b
+21	809	7515721205988915	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	326d7a13b33baadd
+27	874	7515721206652123	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	62dc61e31049673
+6	812	7515721205978949	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	9fe35db234c7d97a
+17	1034	7515721208221978	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	e332077755f89b98
+1148	1234	7515721210220626	C:/Unity/Projects/Pokemon Cards/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3c4q1o3d/obj/arm64-v8a/libgame.so	e124b228ad1e4941
+22	128	7515732877508492	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	ab37dbb8dbab8642
+128	217	7515732878333712	C:/Unity/Projects/Pokemon Cards/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3c4q1o3d/obj/arm64-v8a/libswappywrapper.so	1d0b9991eff2873a
+17	483	7515732881043084	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	3808af72bd3cd62b
+7	485	7515732881072988	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	326d7a13b33baadd
+2	496	7515732881173269	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	9fe35db234c7d97a
+11	503	7515732881253010	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	fe5ef0161cc53b07
+20	545	7515732881661702	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	62dc61e31049673
+5	596	7515732882180034	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	ce500f11ea0d04ba
+14	672	7515732882937610	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	e332077755f89b98
+9	754	7515732883746361	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	28a76d19dd7e0c54
+754	812	7515732884309547	C:/Unity/Projects/Pokemon Cards/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3c4q1o3d/obj/arm64-v8a/libgame.so	e124b228ad1e4941
