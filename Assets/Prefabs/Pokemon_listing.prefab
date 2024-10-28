@@ -55,7 +55,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 8889061052712764662}
   spriteImage: {fileID: 5051303758424276110}
-  pokemonUrl: 
 --- !u!222 &9065190823697831713
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -84,7 +83,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7aad8c583ef292e48b06af0d1f2fab97, type: 3}
+  m_Sprite: {fileID: -4999139646081704930, guid: 7e256976e1071fc41937fec0e37464ea, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
